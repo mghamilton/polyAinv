@@ -15,7 +15,7 @@ Tab.4.Kerr.et.al.2012
 Pedigree file for tetraploid with double reduction in Table 4
 }
 \references{
-Hamilton MG, Kerr RJ. Computation of the inverse additive relationship matrix for autopolyploid and multiple-ploidy populations
+Hamilton MG, Kerr RJ (2018) Computation of the inverse additive relationship matrix for autopolyploid and multiple-ploidy populations. 131:851-860. doi: 10.1007/s00122-017-3041-y
 }
 \author{
 Matthew Hamilton <matthew.hamilton@csiro.au>

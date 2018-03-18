@@ -2,33 +2,33 @@
 #'
 #' Computes the additive relationship matrix (A), A inverse,
 #' coancestry matrix (K), K inverse and inbreeding coefficients (F) for autopolyploid and multiple-ploidy populations
-#' (Hamilton and Kerr), and populations in which individuals have uncertain pedigree (Henderson 1988).
+#' (Hamilton and Kerr 2018), and populations in which individuals have uncertain pedigree (Henderson 1988).
 #' @author Matthew Hamilton <matthew.hamilton@csiro.au>
 #' @param ped A 3-, 4-, 7- or 8-column dataframe containing data of class numeric and/or integer.
 #' @details Columns in the 3-, 4-, 7- or 8-column 'ped' dataframe must be in the following order:
 #' @details - Individual identifier (required)
 #' @details - Sire identifier (required)
 #' @details - Dam identifier (required)
-#' @details - Sire gamete ploidy level (lowercase tau in Hamilton and Kerr; required in 7- and 8-column dataframes only)
+#' @details - Sire gamete ploidy level (lowercase tau in Hamilton and Kerr 2018; required in 7- and 8-column dataframes only)
 #' @details - Sire lambda - the probability that two genes, drawn at random from a random locus in the sire gamete, are identical
 #' by decent as a result of two copies of a gene being inherited from a single parental chromosome.  This may
 #' be greater than zero in non-monoploid gametes through double reduction, irregular meiosis (e.g. the formation
 #' of unreduced gametes through first division restitution or second division restitution), double fertilisation,
-#' or irregular somatic chromosome doubling. (Hamilton and Kerr; required in 7- and 8-column dataframes only)
-#' @details - Dam gamete ploidy level (lowercase tau in Hamilton and Kerr; required in 7- and 8-column dataframes only)
+#' or irregular somatic chromosome doubling. (Hamilton and Kerr 2018; required in 7- and 8-column dataframes only)
+#' @details - Dam gamete ploidy level (lowercase tau in Hamilton and Kerr 2018; required in 7- and 8-column dataframes only)
 #' @details - Dam lambda - the probability that two genes, drawn at random from a random locus in the dam gamete, are identical
 #' by decent as a result of two copies of a gene being inherited from a single parental chromosome.  This may
-#' be greater than zero in non-monoploid gametes for the reasons outlined for 'Sire lambda' above (Hamilton and Kerr;
+#' be greater than zero in non-monoploid gametes for the reasons outlined for 'Sire lambda' above (Hamilton and Kerr 2018;
 #' required in 7- and 8-column dataframes only)
 #' @details - Probability that the individual is the progeny of the sire and dam (Henderson 1988; required in 4- and 8-column dataframes only)
 #' @details Note:
 #' @details - column headings in 'ped' are ignored
 #' @details - if 'ped' contains 3-columns it is assumed to be a standard diploid pedigree file
 #' @details - if 'ped' contains 4-columns it is assumed to be a diploid pedigree file in which individuals have uncertain pedigree (Henderson 1988)
-#' @details - if 'ped' contains 7-columns it is assumed to be a polyploid pedigree (Hamilton and Kerr)
-#' @details - if 'ped' contains 8-columns it is assumed to be a polyploid pedigree in which individuals have uncertain pedigree (Hamilton and Kerr; Henderson 1988)
+#' @details - if 'ped' contains 7-columns it is assumed to be a polyploid pedigree (Hamilton and Kerr 2018)
+#' @details - if 'ped' contains 8-columns it is assumed to be a polyploid pedigree in which individuals have uncertain pedigree (Hamilton and Kerr 2018; Henderson 1988)
 #' @param ASReml.giv.only Logical.  If TRUE only ASReml.giv is returned.  This can reduce memory requirements.
-#' @return A list with the following objects (Hamilton and Kerr):
+#' @return A list with the following objects (Hamilton and Kerr 2018):
 #' @return - K.parents:  Coancestry (K) matrix including parents only
 #' @return - K.inv:      Inverse coancestry (K) triangular matrix as a 3-column (triplet) dataframe with zero elements removed
 #' @return - A.parents:  Numerator relationship (A) matrix including parents only
@@ -38,7 +38,7 @@
 #' @references Amadeu RR, Cellon C, Olmstead JW, Garcia AAF, Resende MFR, Munoz PR (2016) AGHmatrix: R package to construct relationship matrices for autotetraploid and diploid species. A blueberry example. The Plant Genome 9
 #' @references Butler DG, Cullis BR, Gilmour AR, Gogel BJ (2009) ASReml-R reference manual. Queensland Department of Primary Industries and Fisheries, Brisbane
 #' @references Gilmour AR, Gogel BJ, Cullis BR, Welham SJ, Thompson R (2014) ASReml user guide release 4.1 functional specification. VSN International Ltd, Hemel Hempstead, UK
-#' @references Hamilton MG, Kerr RJ. (in press) Computation of the inverse additive relationship matrix for autopolyploid and multiple-ploidy populations.  Theoretical and Applied Genetics
+#' @references Hamilton MG, Kerr RJ (2018) Computation of the inverse additive relationship matrix for autopolyploid and multiple-ploidy populations. 131:851-860. doi: 10.1007/s00122-017-3041-y
 #' @references Henderson CR (1988) Use of an average numerator relationship matrix for multiple-sire joining. Journal of Animal Science 66, 1614-1621.
 #' @examples
 #' #7-column example with diploids, tetraploids, first division restitution,
@@ -78,7 +78,7 @@ polyAinv <- function(ped, ASReml.giv.only = FALSE) {
   # Define sub functions
   #########################################################################################
 
-  # Equation 12 of Hamilton and Kerr
+  # Equation 12 of Hamilton and Kerr 2018
   get.founder.F <- function(indiv.ploidy, sire.lambda, dam.lambda) {
     F <- (indiv.ploidy/2 - 1) * (sire.lambda + dam.lambda) /
       (2 * indiv.ploidy/2 + indiv.ploidy/2 *
@@ -111,7 +111,7 @@ polyAinv <- function(ped, ASReml.giv.only = FALSE) {
                                 dam.lambda    = founder.lambda[founder.lambda[, "INDIV.PLOIDY"] ==
                                                                  indiv.parents[1, "PARENT.GAMETE.PLOIDY"] * 2, "DAM.LAMBDA"])
     } else {
-      # F of parent 8v.p p.i' K.(i-1) p.i^-1 / 2v.p-1 from rhs of Equation 15-16 of Hamilton and Kerr
+      # F of parent 8v.p p.i' K.(i-1) p.i^-1 / 2v.p-1 from rhs of Equation 15-16 of Hamilton and Kerr 2018
       v.p.q <- ped[ped[, "INDIV.ID"] %in%
                      indiv.parents[1, "PARENT.ID"], "INDIV.PLOIDY"][1]/2 #assumes all possible parents of same ploidy
 
@@ -123,7 +123,7 @@ polyAinv <- function(ped, ASReml.giv.only = FALSE) {
       F.parent <- 0 # if there is no gametic contribution then let F.parent = 0
     }
 
-    # Equation 15-16 of Hamilton and Kerr
+    # Equation 15-16 of Hamilton and Kerr 2018
     parent.pr.ibd <- indiv.parents[1, "PARENT.LAMBDA"] + (1 - indiv.parents[1, "PARENT.LAMBDA"]) * F.parent
 
     return(list(parent.pr.ibd=parent.pr.ibd, p.q = p.q, p.q.multiplier = p.q.multiplier))
@@ -489,7 +489,7 @@ polyAinv <- function(ped, ASReml.giv.only = FALSE) {
     rm(tmp)
 
     # Compute s and sire.dam.pr.ibd ###################################
-    # Equation 17 of Hamilton and Kerr
+    # Equation 17 of Hamilton and Kerr 2018
     if(p[1, "INDIV.ID"] == 0 | q[1, "INDIV.ID"] == 0) { #can't have half-sibs in aggreagates
       sire.dam.pr.ibd <- 0
     } else {
@@ -507,14 +507,14 @@ polyAinv <- function(ped, ASReml.giv.only = FALSE) {
 
     if ((indiv.parents[1, "SIRE.ID"] == 0 & indiv.parents[1, "DAM.ID"] == 0)) { # If founder in K
 
-      # Equation 12 of Hamilton and Kerr
+      # Equation 12 of Hamilton and Kerr 2018
       Fi <- get.founder.F(indiv.ploidy = indiv.parents[1, "INDIV.PLOIDY"],
                           sire.lambda = indiv.parents[1, "SIRE.LAMBDA"],
                           dam.lambda = indiv.parents[1, "DAM.LAMBDA"])
 
     } else {
 
-      # Equation 11 of Hamilton and Kerr
+      # Equation 11 of Hamilton and Kerr 2018
       Fi <- (indiv.parents[1, "SIRE.GAMETE.PLOIDY"] *
                (indiv.parents[1, "SIRE.GAMETE.PLOIDY"] - 1) * sire.pr.ibd +
                indiv.parents[1, "DAM.GAMETE.PLOIDY"] *
@@ -530,7 +530,7 @@ polyAinv <- function(ped, ASReml.giv.only = FALSE) {
     }  #END else if((indiv.parents[1,'SIRE.ID'] == 0 & indiv.parents[1,'DAM.ID'] == 0)) {   #If founder in K
     rm(sire.pr.ibd, dam.pr.ibd, sire.dam.pr.ibd)
 
-    # Equation 5 of Hamilton and Kerr
+    # Equation 5 of Hamilton and Kerr 2018
     kii <- (1 + (indiv.parents[1, "INDIV.PLOIDY"] - 1) * Fi)/indiv.parents[1, "INDIV.PLOIDY"]
     K.diag[indiv.count-min(indiv.ids)+1] <- kii
 
@@ -562,7 +562,7 @@ polyAinv <- function(ped, ASReml.giv.only = FALSE) {
 
     # K.INV ###################################
 
-    # Equation 14 of Hamilton and Kerr
+    # Equation 14 of Hamilton and Kerr 2018
     if(nrow(s) == 0) {
       rhs.left <- 1/as.numeric(kii)
     } else {
@@ -667,7 +667,7 @@ polyAinv <- function(ped, ASReml.giv.only = FALSE) {
 
   print("Generating A inverse matrix")
 
-  # Equation 4 of Hamilton and Kerr
+  # Equation 4 of Hamilton and Kerr 2018
   ploidy <- unique(ped[, c("INDIV.ID", "INDIV.PLOIDY")])
   A.inv.matrix <- K.inv.matrix
   if(ASReml.giv.only) {rm(K.inv.matrix)}

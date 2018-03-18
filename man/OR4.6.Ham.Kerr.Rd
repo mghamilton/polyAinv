@@ -3,10 +3,10 @@
 \docType{data}
 \name{OR4.6.Ham.Kerr}
 \alias{OR4.6.Ham.Kerr}
-\title{Example from Hamilton and Kerr}
+\title{Example from Hamilton and Kerr 2018}
 \format{Data frame with 8 rows and 10 columns}
 \source{
-Hamilton MG, Kerr RJ. Computation of the inverse additive relationship matrix for autopolyploid and multiple-ploidy populations
+Hamilton MG, Kerr RJ (2018) Computation of the inverse additive relationship matrix for autopolyploid and multiple-ploidy populations. 131:851-860. doi: 10.1007/s00122-017-3041-y
 }
 \usage{
 OR4.6.Ham.Kerr
@@ -15,7 +15,7 @@ OR4.6.Ham.Kerr
 Pedigree file including diploid and tetraploid pedigree with normal meiosis, first division restitution and somatic chromosome doubling.
 }
 \references{
-Hamilton MG, Kerr RJ. Computation of the inverse additive relationship matrix for autopolyploid and multiple-ploidy populations
+Hamilton MG, Kerr RJ (2018) Computation of the inverse additive relationship matrix for autopolyploid and multiple-ploidy populations. 131:851-860. doi: 10.1007/s00122-017-3041-y
 }
 \author{
 Matthew Hamilton <matthew.hamilton@csiro.au>

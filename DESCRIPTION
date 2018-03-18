@@ -4,7 +4,7 @@ Title: Tools For Quantitative Genetic Analysis
 Version: 0.1.2
 Author: Matthew Hamilton <matthew.hamilton@csiro.au>
 Maintainer: Matthew Hamilton <matthew.hamilton@csiro.au>
-Description: Implements Hamilton MG, Kerr RJ. Computation of the inverse additive relationship matrix for autopolyploid and multiple-ploidy populations.  Generates A (parents only), A inverse (and ASReml giv), K (coancestry matrix; parents only), K inverse and inbreeding (F) coefficients for polyploid pedigrees.
+Description: Implements Hamilton MG, Kerr RJ (2018) Computation of the inverse additive relationship matrix for autopolyploid and multiple-ploidy populations.  Generates A (parents only), A inverse (and ASReml giv), K (coancestry matrix; parents only), K inverse and inbreeding (F) coefficients for polyploid pedigrees.
     Generates the A inverse of pedigrees in which some individuals have uncertain pedigree. See Henderson CR (1988) Use of an average numerator relationship matrix for multiple-sire joining. J Anim Sci 66:1614-1621. doi: 10.2527/jas1988.6671614x
 License: GPL-3
 Depends: R (>= 2.10)

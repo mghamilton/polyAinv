@@ -1,12 +1,12 @@
 #' @docType data
 #' @keywords datasets
-#' @title Example from Hamilton and Kerr
+#' @title Example from Hamilton and Kerr 2018
 #' @description Pedigree file including diploid and triploid pedigree with normal meiosis and second division restitution.
 #' @usage OR4.1.Ham.Kerr
 #' @format Data frame with 8 rows and 10 columns
 #' @author Matthew Hamilton <matthew.hamilton@csiro.au>
-#' @source Hamilton MG, Kerr RJ. Computation of the inverse additive relationship matrix for autopolyploid and multiple-ploidy populations
-#' @references Hamilton MG, Kerr RJ. Computation of the inverse additive relationship matrix for autopolyploid and multiple-ploidy populations
+#' @source Hamilton MG, Kerr RJ (2018) Computation of the inverse additive relationship matrix for autopolyploid and multiple-ploidy populations. 131:851-860. doi: 10.1007/s00122-017-3041-y
+#' @references Hamilton MG, Kerr RJ (2018) Computation of the inverse additive relationship matrix for autopolyploid and multiple-ploidy populations. 131:851-860. doi: 10.1007/s00122-017-3041-y
 
 
 #7-column example with diploids, triploids and second division restitution

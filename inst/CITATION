@@ -5,14 +5,14 @@ citEntry(entry = "Article",
   author       = personList(as.person("Matthew G. Hamilton"),
   as.person("Richard J. Kerr")),
   journal      = "Theoretical and Applied Genetics",
-  year         = "in press",
- # volume       = "3",
- # number       = "5",
-#  pages        = "792-796",
- # url          = "http://onlinelibrary.wiley.com/doi/10.1111/j.2041-210X.2012.00213.x/full",
+  year         = "2018",
+  volume       = "131",
+  number       = "4",
+  pages        = "851–860",
+  url          = "http://link.springer.com/article/10.1007/s00122-017-3041-y",
 
   textVersion  =
-  paste("Hamilton and Kerr (in press).",
+  paste("Hamilton and Kerr (2018)",
         "Computation of the inverse additive relationship matrix for autopolyploid and multiple-ploidy populations.",
-        "Theoretical and Applied Genetics")
+        "Theoretical and Applied Genetics 131:851–860")
 )

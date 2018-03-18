@@ -12,7 +12,7 @@ polyAinv(ped, ASReml.giv.only = FALSE)
 \item{ASReml.giv.only}{Logical.  If TRUE only ASReml.giv is returned.  This can reduce memory requirements.}
 }
 \value{
-A list with the following objects (Hamilton and Kerr):
+A list with the following objects (Hamilton and Kerr 2018):
 
 - K.parents:  Coancestry (K) matrix including parents only
 
@@ -29,7 +29,7 @@ A list with the following objects (Hamilton and Kerr):
 \description{
 Computes the additive relationship matrix (A), A inverse,
 coancestry matrix (K), K inverse and inbreeding coefficients (F) for autopolyploid and multiple-ploidy populations
-(Hamilton and Kerr), and populations in which individuals have uncertain pedigree (Henderson 1988).
+(Hamilton and Kerr 2018), and populations in which individuals have uncertain pedigree (Henderson 1988).
 }
 \details{
 Columns in the 3-, 4-, 7- or 8-column 'ped' dataframe must be in the following order:
@@ -40,19 +40,19 @@ Columns in the 3-, 4-, 7- or 8-column 'ped' dataframe must be in the following o
 
 - Dam identifier (required)
 
-- Sire gamete ploidy level (lowercase tau in Hamilton and Kerr; required in 7- and 8-column dataframes only)
+- Sire gamete ploidy level (lowercase tau in Hamilton and Kerr 2018; required in 7- and 8-column dataframes only)
 
 - Sire lambda - the probability that two genes, drawn at random from a random locus in the sire gamete, are identical
 by decent as a result of two copies of a gene being inherited from a single parental chromosome.  This may
 be greater than zero in non-monoploid gametes through double reduction, irregular meiosis (e.g. the formation
 of unreduced gametes through first division restitution or second division restitution), double fertilisation,
-or irregular somatic chromosome doubling. (Hamilton and Kerr; required in 7- and 8-column dataframes only)
+or irregular somatic chromosome doubling. (Hamilton and Kerr 2018; required in 7- and 8-column dataframes only)
 
-- Dam gamete ploidy level (lowercase tau in Hamilton and Kerr; required in 7- and 8-column dataframes only)
+- Dam gamete ploidy level (lowercase tau in Hamilton and Kerr 2018; required in 7- and 8-column dataframes only)
 
 - Dam lambda - the probability that two genes, drawn at random from a random locus in the dam gamete, are identical
 by decent as a result of two copies of a gene being inherited from a single parental chromosome.  This may
-be greater than zero in non-monoploid gametes for the reasons outlined for 'Sire lambda' above (Hamilton and Kerr;
+be greater than zero in non-monoploid gametes for the reasons outlined for 'Sire lambda' above (Hamilton and Kerr 2018;
 required in 7- and 8-column dataframes only)
 
 - Probability that the individual is the progeny of the sire and dam (Henderson 1988; required in 4- and 8-column dataframes only)
@@ -65,9 +65,9 @@ Note:
 
 - if 'ped' contains 4-columns it is assumed to be a diploid pedigree file in which individuals have uncertain pedigree (Henderson 1988)
 
-- if 'ped' contains 7-columns it is assumed to be a polyploid pedigree (Hamilton and Kerr)
+- if 'ped' contains 7-columns it is assumed to be a polyploid pedigree (Hamilton and Kerr 2018)
 
-- if 'ped' contains 8-columns it is assumed to be a polyploid pedigree in which individuals have uncertain pedigree (Hamilton and Kerr; Henderson 1988)
+- if 'ped' contains 8-columns it is assumed to be a polyploid pedigree in which individuals have uncertain pedigree (Hamilton and Kerr 2018; Henderson 1988)
 }
 \examples{
 #7-column example with diploids, tetraploids, first division restitution,
@@ -105,7 +105,7 @@ Butler DG, Cullis BR, Gilmour AR, Gogel BJ (2009) ASReml-R reference manual. Que
 
 Gilmour AR, Gogel BJ, Cullis BR, Welham SJ, Thompson R (2014) ASReml user guide release 4.1 functional specification. VSN International Ltd, Hemel Hempstead, UK
 
-Hamilton MG, Kerr RJ. (in press) Computation of the inverse additive relationship matrix for autopolyploid and multiple-ploidy populations.  Theoretical and Applied Genetics
+Hamilton MG, Kerr RJ (2018) Computation of the inverse additive relationship matrix for autopolyploid and multiple-ploidy populations. 131:851-860. doi: 10.1007/s00122-017-3041-y
 
 Henderson CR (1988) Use of an average numerator relationship matrix for multiple-sire joining. Journal of Animal Science 66, 1614-1621.
 }
