@@ -17,7 +17,7 @@ polyAinv is a R package (R Core Team 2016) comprised of a single function also n
 
 ### Contact details ###
 
-* <matthew.hamilton@csiro.au>
+* <M.Hamilton@cgiar.org>
 
 ### References ###
 
