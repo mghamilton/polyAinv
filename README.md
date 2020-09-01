@@ -11,6 +11,8 @@ polyAinv is a R package (R Core Team 2016) comprised of a single function also n
 
 * install.packages("devtools")
 * library(devtools)
+* install.packages("usethis")
+* library(usethis)
 * install_github("mghamilton/polyAinv")
 * library(polyAinv)
 * help(polyAinv)
