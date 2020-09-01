@@ -23,5 +23,5 @@ OR4.1.Ham.Kerr <- data.frame(
   INDIV.PLOIDY       = c("Diploid", "Diploid", "Diploid", "Diploid", "Diploid", "Triploid", "Triploid", "Triploid")
 )
 
-devtools::use_data(OR4.1.Ham.Kerr, overwrite = TRUE)
+usethis::use_data(OR4.1.Ham.Kerr, overwrite = TRUE)
 

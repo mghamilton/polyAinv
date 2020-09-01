@@ -26,4 +26,4 @@ OR4.1.Ham.Kerr.uncert <- data.frame(
 #8-column example
 OR4.1.Ham.Kerr.uncert$INDIV.ID    <- c(1,  2,  3,  4,    4,   5,  6,   6)
 OR4.1.Ham.Kerr.uncert$PROBABILITY <- c(1,  1,  1,  0.3,  0.7, 1,  0.5, 0.5)
-devtools::use_data(OR4.1.Ham.Kerr.uncert, overwrite = TRUE)
+usethis::use_data(OR4.1.Ham.Kerr.uncert, overwrite = TRUE)

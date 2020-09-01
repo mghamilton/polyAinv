@@ -15,4 +15,4 @@ Henderson.1988 <- data.frame(
   DAM.ID      = c(0,   0,   2,   2,   4,   0,   6,   6,   4,   4,   6,   6,   6,   4),
   PROBABILITY = c(1,   1,   1,   1,   1,   1,   0.6, 0.4, 0.3, 0.7, 0.3, 0.6, 0.1, 1)
 )
-devtools::use_data(Henderson.1988, overwrite = TRUE)
+usethis::use_data(Henderson.1988, overwrite = TRUE)

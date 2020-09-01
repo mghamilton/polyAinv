@@ -24,5 +24,5 @@ Tab.4.Kerr.et.al.2012 <- data.frame(
   INDIV.PLOIDY       = c("Tetraploid", "Tetraploid", "Tetraploid", "Tetraploid", "Tetraploid", "Tetraploid", "Tetraploid", "Tetraploid", "Tetraploid", "Tetraploid")
 )
 
-devtools::use_data(Tab.4.Kerr.et.al.2012, overwrite = TRUE)
+usethis::use_data(Tab.4.Kerr.et.al.2012, overwrite = TRUE)
 

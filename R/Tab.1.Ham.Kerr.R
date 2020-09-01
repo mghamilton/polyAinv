@@ -22,4 +22,4 @@ Tab.1.Ham.Kerr <- data.frame(
   INDIV.PLOIDY       = c("Diploid", "Tetraploid", "Diploid", "Diploid", "Diploid", "Tetraploid", "Tetraploid", "Tetraploid")
 )
 
-devtools::use_data(Tab.1.Ham.Kerr, overwrite = TRUE)
+usethis::use_data(Tab.1.Ham.Kerr, overwrite = TRUE)

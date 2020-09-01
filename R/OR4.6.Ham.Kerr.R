@@ -21,4 +21,4 @@ OR4.6.Ham.Kerr <- data.frame(
   DAM.SEGREGATION    = c("Normal", "Normal", "Normal", "NA", "Normal", "Somatic chromosome doubling", "Somatic chromosome doubling", "NA"),
   INDIV.PLOIDY       = c("Diploid", "Tetraploid", "Diploid", "Diploid", "Diploid", "Tetraploid", "Tetraploid", "Tetraploid")
 )
-devtools::use_data(OR4.6.Ham.Kerr, overwrite = TRUE)
+usethis::use_data(OR4.6.Ham.Kerr, overwrite = TRUE)
