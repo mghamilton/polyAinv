@@ -4,7 +4,9 @@
 \name{Tab.4.Kerr.et.al.2012}
 \alias{Tab.4.Kerr.et.al.2012}
 \title{Example from Kerr et al 2012}
-\format{Data frame with 8 rows and 10 columns}
+\format{
+Data frame with 8 rows and 10 columns
+}
 \source{
 Kerr RJ, Li L, Tier B, Dutkowski GW, McRae TA (2012) Use of the numerator relationship matrix in genetic analysis of autopolyploid species. Theor Appl Genet 124:1271-1282. doi: DOI 10.1007/s00122-012-1785-y
 }

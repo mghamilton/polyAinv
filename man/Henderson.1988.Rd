@@ -4,7 +4,9 @@
 \name{Henderson.1988}
 \alias{Henderson.1988}
 \title{Example from Henderson (1988)}
-\format{Data frame with 4 rows and 10 columns}
+\format{
+Data frame with 4 rows and 10 columns
+}
 \source{
 Henderson CR (1988) Use of an average numerator relationship matrix for multiple-sire joining. Journal of Animal Science 66, 1614-1621.
 }
