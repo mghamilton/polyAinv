@@ -618,13 +618,13 @@ polyAinv <- function(ped, ASReml.giv.only = FALSE) {
   print(paste("100% complete.", Sys.time()))
 
   #########################################################################################
-  #Rearrange matricies
+  #Rearrange matrices
   #########################################################################################
 
   print("Rearranging matrices")
 
   #########################################################################################
-  #Duplicate according to the number of individuals represted by a family
+  #Duplicate according to the number of individuals represented by a family
   #########################################################################################
   K.inv.mat <- merge(K.inv.mat, n.by.family, by = "FAM.ID", all.x = TRUE)
   K.inv.mat[is.na(K.inv.mat[,"COUNT"]),"COUNT"] <- 1
@@ -790,7 +790,7 @@ polyAinv <- function(ped, ASReml.giv.only = FALSE) {
     colnames(A.inv.matrix) <- c("INDIV.1.REMOVE", "INDIV.2.REMOVE", "A.INV", "INDIV.2", "INDIV.1")
     A.inv.matrix <- A.inv.matrix[,c("INDIV.1", "INDIV.2", "A.INV")]
 
-    diagonals[,"INDIV.ID"] <- unique(ped[,"INDIV.ID.ORIG"])
+    diagonals[order(diagonals[,"INDIV.ID"]),"INDIV.ID"] <- unique(ped[order(ped[,"INDIV.ID"]),"INDIV.ID.ORIG"])
 
     #reorder
     K.parents <- K.parents[order(as.numeric(rownames(K.parents)), decreasing = FALSE),
